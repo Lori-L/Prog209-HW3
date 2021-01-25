@@ -5,7 +5,7 @@ function formSubmitEvent() {
     let customerArray = [];
 
     // we could do much better validation, but that's not the point of this example!
-    if (name.length > 2 && city.length > 2) {  //Put in the customer array shenanigans here.
+    if (name.length > 2 && city.length > 2) {
         customerArray.push(name + " " + city + " " + payment);
         displayList(customerArray, "customerList");
     }
@@ -16,7 +16,9 @@ function formSubmitEvent() {
 
 //Displays the array contents in an unordered list to the specified html id (wipes the existing list first)
 function displayList(array, idName){
-    idName.innerHTML = "";
+    
+    idName.innerHTML = ""; //Wiping any previously existing li elements
+
     for(let i=0; i<array.length; i++){
         let li = document.createElement("li");
         document.getElementById(idName).appendChild(li);
